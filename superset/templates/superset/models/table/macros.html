@@ -1,0 +1,7 @@
+{% macro setdefault() %}
+  <script>
+    $("#database").val("{{ request.args.get('database') }}")
+    $("#schema").val("{{ request.args.get('schema') }}")
+    $("#table_name").val("{{ request.args.get('table_name') }}")
+  </script>
+{% endmacro %}

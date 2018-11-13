@@ -148,6 +148,7 @@ appbuilder.add_view_no_menu(SqlMetricInlineView)
 
 class TableModelView(DatasourceModelView, DeleteMixin, YamlExportMixin):  # noqa
     datamodel = SQLAInterface(models.SqlaTable)
+    add_template = 'superset/models/table/add.html'
 
     list_title = _('List Tables')
     show_title = _('Show Table')

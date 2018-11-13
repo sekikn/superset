@@ -40,10 +40,11 @@
             $('body div.container').append('<div id="tables"></div>');
           div = $('#tables')
           div.html('Tables:<br>');
+          var database = $("#database_name").val();
           $.each(data, function(i, d){
             var id = 'tbl_' + d;
             div.append('<span id="' + id + '" style="margin: 0px 10px 10px 0px;" class="btn btn-default">' + d + '</span>')
-            $('#' + id).click(function(){window.location = '/tablemodelview/add';})
+            $('#' + id).click(function(){window.location = "/tablemodelview/add?database="+database+"&table_name="+d;})
           });
       }).fail(function(error) {
           var respJSON = error.responseJSON;
